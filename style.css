@@ -1,0 +1,309 @@
+/* Import Google Font (if not already linked in HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #ffd1e2, #ffe2e2);
+  /* Light pink gradient */
+  color: #333;
+  /* Dark grey for text for readability */
+  margin: 0;
+  /* Remove default margin */
+  padding: 1.5rem;
+  /* Padding for the whole body */
+  text-align: center;
+  min-height: 100vh;
+  /* Ensure body takes at least full viewport height */
+  box-sizing: border-box;
+  /* Better padding and border handling */
+}
+
+h1,
+h2 {
+  color: #d63384;
+  /* Vibrant pink for headings */
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-bottom: 1em;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+  /* Improved readability */
+  max-width: 650px;
+  /* Max width for paragraphs for better reading flow */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  background: #ff85be;
+  /* A nice pink shade */
+  color: white;
+  padding: 0.8em 1.8em;
+  /* Generous padding */
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  /* Bolder text on buttons */
+  border-radius: 25px;
+  /* More rounded buttons */
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Smooth transitions */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+}
+
+button:hover {
+  background: #ff6fa3;
+  /* Darker pink on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect */
+}
+
+button:active {
+  transform: translateY(0px);
+  /* Button press effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for letter buttons */
+.buttons {
+  display: grid; /* Using CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); 
+  gap: 12px;             /* Space between buttons (vertical and horizontal) */
+  max-width: 700px;      /* Max width for the whole button group on larger screens */
+  margin: 1.5rem auto;   /* Center the button group */
+  padding: 0 10px;       /* Add a little horizontal padding to the container itself on small screens */
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons button {
+  width: 100%; /* Buttons will fill their grid cell width */
+  padding: 0.8em 0.5em; /* Adjust padding: 0.8em top/bottom, 0.5em left/right */
+                       /* This makes them a bit less tall and wide */
+  font-size: 0.9rem;   /* Font size for text like "Letter 01" */
+  min-height: 44px;    /* Good minimum height for tap targets */
+  
+  /* Ensure text is centered (though default for button usually) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* Other existing button styles like background, color, border-radius from your general 'button' rule will still apply */
+}
+
+/* Styles for the loaded letter content */
+#letter-text {
+  max-width: 700px;
+  /* Max width for the letter content area */
+  margin: 2rem auto;
+  /* Centering and spacing */
+  padding: 20px 25px;
+  /* Padding inside the letter */
+  background: rgba(255, 255, 255, 0.9);
+  /* Slightly transparent white background */
+  border-radius: 18px;
+  /* Rounded corners */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  /* Softer, more prominent shadow */
+  text-align: left;
+  /* Align text to left for readability in letters */
+  white-space: pre-line;
+  /* Respects newlines in your HTML/text */
+}
+
+#letter-text h1,
+#letter-text h2,
+#letter-text h3 {
+  color: #c2185b;
+  /* Slightly different shade for letter headings */
+  margin-top: 1.5em;
+  margin-bottom: 0.7em;
+}
+
+#letter-text h1:first-child,
+#letter-text h2:first-child,
+#letter-text h3:first-child {
+  margin-top: 0;
+  /* No top margin for the very first heading in a letter */
+}
+
+#letter-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  /* Slightly darker text for better contrast on white */
+  margin-bottom: 1.2em;
+}
+
+#letter-text img {
+  max-width: 100%;
+  /* Make images responsive */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 12px;
+  /* Rounded corners for images */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: block;
+  /* Center images if they have margin auto */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#letter-text audio {
+  width: 100%;
+  /* Make audio player responsive */
+  margin-top: 20px;
+}
+
+/* Fade-in animation (can be applied to sections when they appear) */
+.fade-in {
+  animation: fadeInAnimation 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles for the password screen (if you use it) */
+#password-screen {
+  position: fixed;
+  inset: 0;
+  /* Covers the whole screen */
+  background: #fff3f7;
+  /* Light pink background */
+  display: flex;
+  /* Using flex for centering */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  /* Ensure it's on top */
+  padding: 20px;
+}
+
+#password-screen h2 {
+  color: #e91e63;
+  margin-bottom: 1em;
+}
+
+#pw-input {
+  padding: 0.7em 1em;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-top: 1em;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+#password-screen button {
+  margin-top: 1.5em;
+  padding: 0.7em 1.5em;
+  /* Uses general button styles */
+}
+
+
+/* Responsive adjustments for smaller screens (Mobile) */
+@media screen and (max-width: 768px) {
+
+  /* Adjusted breakpoint for tablets/large phones */
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.9em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    padding: 0.7em 1.5em;
+    font-size: 0.95rem;
+  }
+
+  .buttons button {
+    flex-basis: 100px;
+    /* Adjust basis for smaller screens */
+  }
+
+  #letter-text {
+    padding: 15px 20px;
+    margin: 1.5rem auto;
+  }
+
+  #letter-text p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  /* Specific for smaller mobile phones */
+  h1 {
+    font-size: 1.7em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  p {
+    font-size: 0.9rem;
+    /* Slightly smaller for very small screens */
+  }
+
+  button {
+    width: auto;
+    /* Allow buttons to size based on content or flex rules */
+    padding: 0.6em 1.2em;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+
+  .buttons button {
+    flex-basis: calc(50% - 10px);
+    /* Example: 2 buttons per row */
+    font-size: 0.9rem;
+  }
+
+  #letter-text {
+    padding: 15px;
+    /* Less padding for smaller letter box */
+  }
+}
+

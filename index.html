@@ -1,0 +1,71 @@
+<!-- Password Screen -->
+<!-- <div id="password-screen" style="position: fixed; inset: 0; background: #fff3f7; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999;">
+  <h2 style="color: #e91e63;">🔐 Enter Secret Code</h2>
+  <input id="pw-input" type="password" placeholder="Your birthday code..." style="padding: 0.5em 1em; font-size: 1em; border-radius: 8px; border: 1px solid #ccc; margin-top: 1em;" />
+  <button onclick="checkPassword()" style="margin-top: 1em; padding: 0.5em 1.2em; border: none; background: #e91e63; color: white; font-weight: bold; border-radius: 8px;">Unlock</button>
+</div> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy 21st Birthday Khushu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="welcome">
+      <h1>Happy 21st Birthday, Khushu 💖</h1>
+      <p>
+        <b><i style="font-size: large;">Happiest Birthday Mazhi khusu......</i></b><br /><br />
+        Tula sangu nahi shekat mi kiti khush ahe tr, karan aaj tuzha birthday
+        ahe.<br />
+
+        Tu mazya sathi kiti special ahe te mi sangu nahi shekat,<br />
+        mi tuzya vr kiti prem krto tula mahit tr ahe<br />
+        pn mala te tuzya samor dakhvala nahi midat ahe<br />
+        <br />
+        Manun mi ek chota sa pryetna krt ahe, <br />
+        tula wish karnya cha, ani ho mala mahiti ahe,<br />
+        sarvat special wish mich krnar tula ani sarvat chan suddha,
+        <br /><br />
+
+        Tu vichar krt asnar he kai ahe ata<br />
+        tr mi ek chotisi website banavli ahe <br />
+        jya madhe mi tuzya sathi 21 letter lihile le ahet<br />
+        ani tya madhe mazha purn prem sangitla ahe<br />
+        tasa mazya manatla prem tuzya sathi kiti ahe <br />
+        he sangna khup kathin ahe <br />
+        pn mi ek chota sa try kela ahe<br />
+        <br />
+        Tu khali dilelya button vr click krt ja samor tula mahit padat janar<br />
+      </p>
+      <button onclick="showLetterList()">💌 Open the Letters</button>
+    </div>
+
+    <div id="letter-buttons" style="display: none">
+      <h2>Ek Letter Nivad... ✨</h2>
+      <div class="buttons">
+        <!-- 21 buttons -->
+        <script>
+          for (let i = 1; i <= 21; i++) {
+            let num = i.toString().padStart(2, "0");
+            document.write(
+              `<button onclick="loadLetter('${num}')">Letter ${num}</button>`
+            );
+          }
+        </script>
+      </div>
+      <br />
+      <button onclick="backToWelcome()">⬅ Back to Welcome</button>
+    </div>
+
+    <div id="letter-content" style="display: none" class="letter-block">
+      <div id="letter-text"></div>
+      <button onclick="backToList()">⬅ Back to Letters</button>
+    </div>
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>
